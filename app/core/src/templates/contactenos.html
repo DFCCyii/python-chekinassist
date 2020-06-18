@@ -1,0 +1,180 @@
+
+
+	<!-- Modal -->
+{%extends 'base.html'%}
+
+{%block contenido_contactenos%}	
+
+{%load static%}	
+
+	<!-- LOADER -->
+	<div id="preloader">
+		<div class="loader-container">
+			<div class="progress-br float shadow">
+				<div class="progress__item"></div>
+			</div>
+		</div>
+	</div>
+	<!-- END LOADER -->	
+
+    <!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo-1.jpg" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-host">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Caracteristicas </a></li>
+						<li class="nav-item active"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1 style="color: #05747B">Contactenos<span class="m_1 font-weight-bolder">algunos canales de comunicacion que tenemos disponibles.</span></h1>
+		</div>
+	</div>
+	
+           <!--      <form action="" method="POST">
+                    {% csrf_token %}
+                     {{formulario.as_p}}
+                     <div class="form-group text-light">
+                        <button type="submit" name="sndmsj" class="btn btn-success">Enviar</button>
+                        </div>
+
+                </form> -->
+
+     <!--            {{ request.POST }} -->
+
+
+
+    <div class="col-sm-12">
+        <section class="row bg-dark">
+            <div class="col-md-5 mt-4">
+                <h3 class="text-warning">Nuestras redes sociales:</h3>
+                <div class="d-flex">
+                    <a class="nav-link text-primary" href="facebook.com">Facebook</a>
+                    <a class="nav-link text-light" href="linkedin.com">Linkedin</a>
+                </div>
+
+                <div class="col-md-12">
+                    <form action="" method="POST">
+                          {% csrf_token %}
+                        <div class="form-group ">
+                           <label for="" class="text-light">Tipo de petición</label>
+                           
+                             {{ formulario.tipomsj }}
+                             
+                        </div> 
+                        
+                        <div class="form-group  text-light">
+                            <label for="">Tu Nombre</label>
+                           {{ formulario.usuario }}
+                        </div>
+                        
+                        <div class="form-group text-light">
+                            <label for="">Correo electronico</label>
+                          {{ formulario.correo }}
+                        </div>
+                       <!--  {{formulario.correo.errors}} -->
+                        
+                        <div class="form-group text-light">
+                            <label for="">Mensaje</label>
+                          {{formulario.mensaje}} 
+                        </div>
+
+                        <div class="form-group text-light">
+                              <span class="col-md-9">
+                            {% if "ok" in request.GET %}
+                                <span class="alert alert-success mb-2">Se ha enviado tu mensaje</span>
+                            {% endif %}
+                            {% if "fail" in request.GET %}
+                                <span class="alert alert-danger mb-2">No se puede Enviar tu mensaje</span>
+                            {% endif %} 
+                            </span>
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="col-md-7 mt-4">
+                <h3 class="text-light">Nuestra ubicación:</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7193384980415!2d-75.56967914092368!3d6.30056155840395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442f25d6670d4d%3A0x8043999e5e767b96!2sSENA%20DE%20PEDREGAL!5e0!3m2!1sen!2sco!4v1590629043481!5m2!1sen!2sco" width="90%" height="85%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contáctenos</h3>
+                        </div>
+                        <p> Si desea puede ponerse en contacto con nostros y hacernos conocer sus inquietudes y sugerencias .</p>
+                        <p>A continuacion puede er algunas formas de contactarnos.</p>
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+				<div class="col-lg-4 col-md-4 col-xs-12">
+                    
+                </div><!-- end col -->
+				
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contact Details</h3>
+                        </div>
+
+                        <ul class="footer-links">
+                            <li><a href="mailto:#">info@yoursite.com</a></li>
+                            <li><a href="#">www.yoursite.com</a></li>
+                            <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
+                            <li>+61 3 8376 6284</li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">                   
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">QuickCloud</a> Design By : <a href="https://html.design/">html design</a></p>
+                </div>
+
+                <div class="footer-right">
+                    <ul class="footer-links-soi">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-github"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+					</ul><!-- end links -->
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    {% endblock %}
+
+    <!-- ALL JS FILES -->
+  
